@@ -1,0 +1,6 @@
+Alterações
+
+
+nome da pasta
+adição da seção "Equipe"
+adição do arquivo "estilo.css"
