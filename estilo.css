@@ -13,6 +13,14 @@
 	width: 50%;
 }
 
+.vertical-center{
+	top: 50% !important;
+}
+
 body {
 	font-family: 'Roboto', sans-serif !important;
+}
+
+.page-footer{
+	margin-top: 20px;
 }

@@ -6,3 +6,5 @@ adição da seção "Equipe"
 adição do arquivo "estilo.css"
 atributo "lang" (html) e "Title" (head)
 Adição da font Robot
+Alterações em divisões da página
+Criação de Rodapé

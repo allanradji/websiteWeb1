@@ -26,7 +26,7 @@
 </head>
 <body>
   
-<div class="container">
+<div id="topo" class="container">
 
 	<!-- Menu -->
 	<nav class="navbar navbar-inverse">
@@ -195,9 +195,9 @@
 	<!-- Início da seção Equipe -->
 
 		<div class="page-header">
-		<h3 id="nossaEquipe" class="text-center">Nossos Mestres Cozinheiros</h3>
-			
+			<h3 id="nossaEquipe" class="text-center">Nossos Mestres Cozinheiros</h3>
 		</div>
+
 		<div id="equipe" class="row">
 			<div class="col-md-4 text-center">
 				<img src="imagens/joao.jpg" class="img-circle" alt="João Felipe">
@@ -221,13 +221,20 @@
 				</blockquote>
 			</div>
 		</div>
-	<hr/>
 	<!-- Fim da seção Equipe -->
 	
 	<!-- Mapa -->
+	<div class="page-header">
+		<h3 class="text-center">Onde estamos</h3>
+	</div>
 	<div id="map" style="width:100%;height:300px"></div>
 
-	<div class="footer"></div>
+	<div class="page-footer">
+		<div class="container" style="background-color: black; height: 100px;width:100%; color:white;">
+			<span class="glyphicon glyphicon-copyright-mark vertical-center" > Projeto UFRN, disciplina WEB I</span>
+		</div>
+	</div>
+	
 
 	<script>
 		function myMap() {
