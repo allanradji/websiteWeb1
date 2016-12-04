@@ -1,0 +1,18 @@
+
+/*
+	Define tamanho padrão para imagens da seção "Equipe".
+*/
+#equipe > div > img{
+	width: 50%;
+}
+
+/*
+	Define tamanho padrão para imagens da seção "".
+*/
+#equipe > div > img{
+	width: 50%;
+}
+
+body {
+	font-family: 'Roboto', sans-serif !important;
+}

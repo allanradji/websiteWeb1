@@ -1,13 +1,28 @@
 ﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <title>Bootstrap Example</title>
+  <title>Restaurante</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="estilo.css">
+   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvWqFXja8QVbYpLeW6h3NkZHU8rFiOLYQ"></script>
+  <style>
+        .carousel-inner > .item > img,
+        .carousel-inner > .item > a > img {
+        width: 70%;
+        margin: auto;
+        }
+        .carousel-indicators li {
+            background-color: #ff0000;
+    }
+        .carousel-indicators .active {
+            background-color: #ffaaaa;
+        }
+  </style>
 </head>
 <body>
   
@@ -23,7 +38,7 @@
 	      <li class="active"><a href="index.html">Home</a></li>
 	      <li><a href="#">Cardápio</a></li>
 	      <li><a href="cadastro.html">Contato</a></li> 
-	      <li><a href="#">Mapa</a></li> 
+	       <li><a href="mapa.html">Mapa</a></li>
 	    </ul>
 	  </div>
 	</nav>
@@ -49,58 +64,30 @@
 	    
 	    <div class="item active">
 	      <img src="imagens/c1.jpg" alt="Almôdegas">
-	      <div class="carousel-caption">
-	        <h3>Almôndegas</h3>
-	        <p>Super promoção do domingo!</p>
-	      </div>
 	    </div>
 
 	    <div class="item">
 	      <img src="imagens/c2.jpg" alt="Frango Teriyaki">
-	      <div class="carousel-caption">
-	        <h3>Frango Teriyaki</h3>
-	        <p>Super promoção da segunda-feira.</p>
-	      </div>
 	    </div>
 
 	    <div class="item">
 	      <img src="imagens/c3.jpg" alt="Streak Sabor Churrasco">
-	      <div class="carousel-caption">
-	        <h3>Streak Sabor Churrasco</h3>
-	        <p>Super promoção da terça-feira.</p>
-	      </div>
 	    </div>
 
 	    <div class="item">
 	      <img src="imagens/c4.jpg" alt="Frango Pizzaiolo">
-	      <div class="carousel-caption">
-	        <h3>Frango Pizzaiolo</h3>
-	        <p>Super promoção da quarta-feira</p>
-	      </div>
 	    </div>
 
 	    <div class="item">
 	      <img src="imagens/c5.jpg" alt="Italiano">
-	      <div class="carousel-caption">
-	        <h3>Italiano</h3>
-	        <p>Super promoção da quinta-feira</p>
-	      </div>
 	    </div>
 
 	    <div class="item">
 	      <img src="imagens/c6.jpg" alt="Presunto">
-	      <div class="carousel-caption">
-	        <h3>Presunto</h3>
-	        <p>Super promoção de sexta-feira</p>
-	      </div>
 	    </div>
 
 	    <div class="item">
 	      <img src="imagens/c7.jpg" alt="Atum">
-	      <div class="carousel-caption">
-	        <h3>Atum</h3>
-	        <p>Super promoção de sábado</p>
-	      </div>
 	    </div>
 	
 	  </div>
@@ -120,6 +107,7 @@
 	<hr/>
 
 	<!-- Imagens -->
+	 <!-- Linha 1 -->
 	<div class="row">
 	
 	  <div class="col-md-4">
@@ -156,32 +144,79 @@
 	  </div>
 
 	</div>
+
+ 	<!-- linha 2 -->
+
+    <div class="row">
+    
+    	<div class="col-md-4">
+        	<div class="thumbnail">
+         		<a href="imagens/frangopizzaiolo.jpg">
+            		<img src="imagens/frangopizzaiolo.jpg" alt="Frango" style="width:100%">
+            		<div class="caption">
+              			<p>
+              				Sanduíche de pão francês com uma suculenta carne de frango e um delicioso molho especial.
+              			</p>
+            		</div>
+          		</a>
+        	</div>
+     	</div>
+ 
+		 <div class="col-md-4">
+		    <div class="thumbnail">
+		      	<a href="iamgens/italiano.jpg">
+		        	<img src="imagens/italiano.jpg" alt="Atum" style="width:100%">
+		        	<div class="caption">
+		          		<p>
+		          			Sanduíche de pão francês com uma suculento creme de atum e uma deliciosa salada especial.
+		          		</p>
+		        	</div>
+		      	</a>
+	        </div>
+    	</div>
+ 
+      	<div class="col-md-4">
+        	<div class="thumbnail">
+          		<a href="iamgens/presunto.jpg">
+            		<img src="imagens/presunto.jpg" alt="Almôdegas" style="width:100%">
+            		<div class="caption">
+              			<p>
+              				Sanduíche de pão francês com uma suculenta almôndegas de carne e um delicioso molho de tomate especial.
+              			</p>
+            		</div>
+          		</a>
+        	</div>
+      	</div>
+ 
+    </div>
+
 	<!-- Fim Imagens -->
 
 	<!-- Início da seção Equipe -->
 
-	<hr/>
-		<h3 id="equipe" class="text-center">Nossos Mestres Cozinheiros</h3>
-		<br/><br/>
-		<div class="row">
-			<div class="col-md-4 border-black">
-				<img src="imagens/joao.jpg" class="img-circle" alt="João Felipe" style="width: 50%">
+		<div class="page-header">
+		<h3 id="nossaEquipe" class="text-center">Nossos Mestres Cozinheiros</h3>
+			
+		</div>
+		<div id="equipe" class="row">
+			<div class="col-md-4 text-center">
+				<img src="imagens/joao.jpg" class="img-circle" alt="João Felipe">
 				<blockquote>
 					<p>"Cozinhar é minha grande paixão!"</p>
 					<small><cite>João Felipe</cite></small>
 				</blockquote>
 			</div>
-			<div class="col-md-4">
-				<img src="imagens/maria.jpg" class="img-circle" alt="Maria Cristina" style="width: 50%">
+			<div class="col-md-4 text-center">
+				<img src="imagens/maria.jpg" class="img-circle" alt="Maria Cristina">
 				<blockquote>
 					<p>"Minha maior recompensa é o sorriso no rosto de cada clientes."</p>
 					<small><cite>Maria Cristina</cite></small>
 				</blockquote>
 			</div>
-			<div class="col-md-4">
-				<img src="imagens/andre.jpg" class="img-circle" alt="André Márcio" style="width: 50%">
+			<div class="col-md-4 text-center">
+				<img src="imagens/andre.jpg" class="img-circle" alt="André Márcio">
 				<blockquote>
-					<p>"A cozinha é o meu lar."</p>
+					<p>"A cozinha é meu lar."</p>
 					<small><cite>André Márcio</cite></small>
 				</blockquote>
 			</div>
@@ -190,13 +225,43 @@
 	<!-- Fim da seção Equipe -->
 	
 	<!-- Mapa -->
-	<div id="map" style="width:100%;height:500px"></div>
+	<div id="map" style="width:100%;height:300px"></div>
+
+	<div class="footer"></div>
 
 	<script>
 		function myMap() {
-  		 var mapCanvas = document.getElementById("map");
-  		 var mapOptions = { center: new google.maps.LatLng(-5.8319394, -35.2052994),zoom: 5 }
+  		var mapCanvas = document.getElementById("map");
+        var mapOptions = { 
+        	center: new google.maps.LatLng(-5.8319394, -35.2052994),
+        	zoom: 18,
+        	panControl: false,
+			mapTypeId: google.maps.MapTypeId.ROADMAP
+       }
   		 var map = new google.maps.Map(mapCanvas, mapOptions);
+  		 var markerImage = 'imagens/marker.png';
+ 
+       var marker = new google.maps.Marker({
+            position: new google.maps.LatLng(-5.8318499, -35.2052999),
+            map: map,
+            icon: markerImage
+       });
+ 
+       var contentString = '<div class="info-window">' +
+                '<h3>Endereço:</h3>' +
+                '<div class="info-content">' +
+                '<p>CIVT – UFRN – Av. Senador Salgado Filho, 3000 – Lagoa Nova, CEP: 59.078-970 – Natal/RN Recepção: (84) 3342-2216 Ramal 100</p>' +
+                '</div>' +
+                '</div>';
+ 
+       var infowindow = new google.maps.InfoWindow({
+            content: contentString,
+            maxWidth: 400
+       });
+ 
+        marker.addListener('click', function () {
+            infowindow.open(map, marker);
+        });
 		}
 	</script>
 	
