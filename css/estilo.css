@@ -1,0 +1,52 @@
+
+/*
+	Define tamanho padrão para imagens da seção "Equipe".
+*/
+#equipe > div > img{
+	width: 50%;
+}
+
+/*
+	Define tamanho padrão para imagens da seção "Principais pratos".
+*/
+#principaisPratos > .thumbnail > a > img{
+	width: 100%;
+}
+
+.vertical-center{
+	top: 50% !important;
+}
+
+body {
+	font-family: 'Roboto', sans-serif !important;
+}
+
+.page-footer{
+	margin-top: 20px;
+}
+
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+	width: 70%;
+    margin: auto;
+}
+
+.carousel-indicators li {
+    background-color: #ff0000 !important;
+}
+
+.carousel-indicators .active {
+    background-color: #ffaaaa !important;
+}
+
+ #map {
+	width:100%;
+	height:300px;
+ }
+
+.page-footer > .container {
+ 	background-color: black;
+ 	height: 100px;
+ 	width:100%;
+ 	color:white;
+ }

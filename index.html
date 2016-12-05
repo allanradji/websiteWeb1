@@ -1,28 +1,17 @@
 ﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <title>Restaurante</title>
+  <title>FastLanche</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="estilo.css">
-   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+  <link rel="stylesheet" href="css/estilo.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvWqFXja8QVbYpLeW6h3NkZHU8rFiOLYQ"></script>
-  <style>
-        .carousel-inner > .item > img,
-        .carousel-inner > .item > a > img {
-        width: 70%;
-        margin: auto;
-        }
-        .carousel-indicators li {
-            background-color: #ff0000;
-    }
-        .carousel-indicators .active {
-            background-color: #ffaaaa;
-        }
-  </style>
+  <script type="text/javascript" src="js/mapa.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?callback=myMap" async defer></script>
 </head>
 <body>
   
@@ -92,6 +81,7 @@
 	
 	  </div>
 
+
 	  <!-- Left and right controls -->
 	  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
 	    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
@@ -104,16 +94,17 @@
 	</div>
 	<!-- Carrousel -->
 
-	<hr/>
-
 	<!-- Imagens -->
 	 <!-- Linha 1 -->
-	<div class="row">
+	<div class="page-header">
+		<h3 class="text-center">Principais pratos</h3>
+	</div>
+	<div id="principaisPratos"class="row">
 	
 	  <div class="col-md-4">
 	    <div class="thumbnail">
 	      <a href="imagens/frango.jpg">
-	        <img src="imagens/frango.jpg" alt="Frango" style="width:100%">
+	        <img src="imagens/frango.jpg" alt="Frango">
 	        <div class="caption">
 	          <p>Sanduíche de pão francês com uma suculenta carne de frango e um delicioso molho especial.</p>
 	        </div>
@@ -124,7 +115,7 @@
 	  <div class="col-md-4">
 	    <div class="thumbnail">
 	      <a href="iamgens/atum.jpg">
-	        <img src="imagens/atum.jpg" alt="Atum" style="width:100%">
+	        <img src="imagens/atum.jpg" alt="Atum">
 	        <div class="caption">
 	          <p>Sanduíche de pão francês com uma suculento creme de atum e uma deliciosa salada especial.</p>
 	        </div>
@@ -135,9 +126,9 @@
 	  <div class="col-md-4">
 	    <div class="thumbnail">
 	      <a href="iamgens/almondegas.jpg">
-	        <img src="imagens/almondegas.jpg" alt="Almôdegas" style="width:100%">
+	        <img src="imagens/almondegas.jpg" alt="Almôdegas">
 	        <div class="caption">
-	          <p>Sanduíche de pão francês com uma suculenta almôndegas de carne e um delicioso molho de tomate especial.</p>
+	          <p>Sanduíche de pão francês com uma suculenta almôndegas de carne e um delicioso molho.</p>
 	        </div>
 	      </a>
 	    </div>
@@ -152,7 +143,7 @@
     	<div class="col-md-4">
         	<div class="thumbnail">
          		<a href="imagens/frangopizzaiolo.jpg">
-            		<img src="imagens/frangopizzaiolo.jpg" alt="Frango" style="width:100%">
+            		<img src="imagens/frangopizzaiolo.jpg" alt="Frango">
             		<div class="caption">
               			<p>
               				Sanduíche de pão francês com uma suculenta carne de frango e um delicioso molho especial.
@@ -165,7 +156,7 @@
 		 <div class="col-md-4">
 		    <div class="thumbnail">
 		      	<a href="iamgens/italiano.jpg">
-		        	<img src="imagens/italiano.jpg" alt="Atum" style="width:100%">
+		        	<img src="imagens/italiano.jpg" alt="Atum">
 		        	<div class="caption">
 		          		<p>
 		          			Sanduíche de pão francês com uma suculento creme de atum e uma deliciosa salada especial.
@@ -178,10 +169,10 @@
       	<div class="col-md-4">
         	<div class="thumbnail">
           		<a href="iamgens/presunto.jpg">
-            		<img src="imagens/presunto.jpg" alt="Almôdegas" style="width:100%">
+            		<img src="imagens/presunto.jpg" alt="Almôdegas">
             		<div class="caption">
               			<p>
-              				Sanduíche de pão francês com uma suculenta almôndegas de carne e um delicioso molho de tomate especial.
+              				Sanduíche de pão francês com uma suculenta almôndegas de carne e um delicioso molho.
               			</p>
             		</div>
           		</a>
@@ -199,6 +190,14 @@
 		</div>
 
 		<div id="equipe" class="row">
+			
+			<div class="col-md-4 text-center">
+				<img src="imagens/andre.jpg" class="img-circle" alt="André Márcio">
+				<blockquote>
+					<p>"A cozinha é meu lar."</p>
+					<small><cite>André Márcio</cite></small>
+				</blockquote>
+			</div>
 			<div class="col-md-4 text-center">
 				<img src="imagens/joao.jpg" class="img-circle" alt="João Felipe">
 				<blockquote>
@@ -209,15 +208,8 @@
 			<div class="col-md-4 text-center">
 				<img src="imagens/maria.jpg" class="img-circle" alt="Maria Cristina">
 				<blockquote>
-					<p>"Minha maior recompensa é o sorriso no rosto de cada clientes."</p>
+					<p>"Minha maior recompensa é o sorriso no rosto de cada cliente."</p>
 					<small><cite>Maria Cristina</cite></small>
-				</blockquote>
-			</div>
-			<div class="col-md-4 text-center">
-				<img src="imagens/andre.jpg" class="img-circle" alt="André Márcio">
-				<blockquote>
-					<p>"A cozinha é meu lar."</p>
-					<small><cite>André Márcio</cite></small>
 				</blockquote>
 			</div>
 		</div>
@@ -227,53 +219,15 @@
 	<div class="page-header">
 		<h3 class="text-center">Onde estamos</h3>
 	</div>
-	<div id="map" style="width:100%;height:300px"></div>
 
+	<div id="map"></div>
+
+	<!-- Rodapé -->
 	<div class="page-footer">
-		<div class="container" style="background-color: black; height: 100px;width:100%; color:white;">
+		<div class="container">
 			<span class="glyphicon glyphicon-copyright-mark vertical-center" > Projeto UFRN, disciplina WEB I</span>
 		</div>
 	</div>
-	
-
-	<script>
-		function myMap() {
-  		var mapCanvas = document.getElementById("map");
-        var mapOptions = { 
-        	center: new google.maps.LatLng(-5.8319394, -35.2052994),
-        	zoom: 18,
-        	panControl: false,
-			mapTypeId: google.maps.MapTypeId.ROADMAP
-       }
-  		 var map = new google.maps.Map(mapCanvas, mapOptions);
-  		 var markerImage = 'imagens/marker.png';
- 
-       var marker = new google.maps.Marker({
-            position: new google.maps.LatLng(-5.8318499, -35.2052999),
-            map: map,
-            icon: markerImage
-       });
- 
-       var contentString = '<div class="info-window">' +
-                '<h3>Endereço:</h3>' +
-                '<div class="info-content">' +
-                '<p>CIVT – UFRN – Av. Senador Salgado Filho, 3000 – Lagoa Nova, CEP: 59.078-970 – Natal/RN Recepção: (84) 3342-2216 Ramal 100</p>' +
-                '</div>' +
-                '</div>';
- 
-       var infowindow = new google.maps.InfoWindow({
-            content: contentString,
-            maxWidth: 400
-       });
- 
-        marker.addListener('click', function () {
-            infowindow.open(map, marker);
-        });
-		}
-	</script>
-	
-	<script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
-	
 	<!-- Fim mapa -->
 
 </div>

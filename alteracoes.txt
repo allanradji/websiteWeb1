@@ -8,3 +8,8 @@ atributo "lang" (html) e "Title" (head)
 Adição da font Robot
 Alterações em divisões da página
 Criação de Rodapé
+
+Desviculação de css da página html
+Adição de subtitulo "Principais pratos"
+Ajuste do alinhamento da seção principais pratos
+Desvinculação de Javascript da página html
